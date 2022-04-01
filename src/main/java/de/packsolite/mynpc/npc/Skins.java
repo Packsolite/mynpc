@@ -1,0 +1,73 @@
+package de.packsolite.mynpc.npc;
+
+import java.util.UUID;
+
+import org.bukkit.entity.Player;
+
+import com.mojang.authlib.properties.Property;
+
+import de.liquiddev.util.bukkit.ItemFactory;
+import de.liquiddev.util.bukkit.TextureUtil;
+import de.liquiddev.util.common.uuid.TextureProperty;
+import de.liquiddev.util.common.uuid.UuidProvider;
+import de.liquiddev.util.common.uuid.UuidUtil;
+import lombok.Getter;
+
+@Getter
+public enum Skins {
+
+	Custom("", ""), Du("", ""),
+	hopesalat(
+			"ewogICJ0aW1lc3RhbXAiIDogMTU5OTY1NjI4ODQ1MiwKICAicHJvZmlsZUlkIiA6ICJhNTEwOWUyM2Q1ODY0YWU3YTdkOWE3NTM4NTA2Njk1ZSIsCiAgInByb2ZpbGVOYW1lIiA6ICJob3Blc2FsYXQiLAogICJzaWduYXR1cmVSZXF1aXJlZCIgOiB0cnVlLAogICJ0ZXh0dXJlcyIgOiB7CiAgICAiU0tJTiIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTIwMjUwMzdmYzJjNWUyZDZhMDNmNjNkZjcxMDAxZWYzYjViY2U5ZWI2OWUxYjFkZWZlZWQ3MmMyMDI0ODAzIiwKICAgICAgIm1ldGFkYXRhIiA6IHsKICAgICAgICAibW9kZWwiIDogInNsaW0iCiAgICAgIH0KICAgIH0KICB9Cn0=",
+			"DuZZP81TStAUiqCUDUQiNKkBe/znk/OtRT4GeWGnbZeJbwwPuDfIhAG91IFGHn5V4KsQ90ni2xj+944dmUHc/C9Gkfh4+U4vhTBXfcOetO/7LQAS0hrJSXmEsU0Vct9o9/QUnwBvis69RPFb2p6cdOICeTBwrzU2sowSPSeeNeSjB7wO5edB6LNnm0DqwNt2TL5fMCTrwOy6/+0hzbUwLliDwNB/PtcI8VLt6IzcI/BwmhEE5nSjtnibFQiaC2b6ayRx8Tu/B9bn2Fh+B6bkKauiUSxqC4Z1oeDgsXUgJ7iiil7n/ofYtf6tJm7qf0/kHZlxRF+O5HMdxyvlWaNPuzYx5Ymr75T2WlHrG+rBRLiFyENNDGOOLPNs8qwukY5JyDGryGapTDyDH5s9OLAVNzEQTs514RwuImWQmK3V9G4nxcv4SkKeo3wFPVOQuE9wXsywfadFVV/HQ1stw/n8L+tCDgMxnXA7SgsKYBc0oAnEcIESYc9oJvHKkeInwwCuiXMD9/eqsEquGXse0u7mr0Mc03vzwLTLsWfMpvUi/BtL3ZSKzrrahVxdAKcmTdgBorslHbWsdWy8dfH6d/0Dxft6GyzQ1+wVRt7KWJ/0vl3Q7K8EpX/orxFZqJNy8cRRgB0FnWVLHWRCD/K8Np90GK0U3EO86NWiOG3IHzyQecg="),
+	kallemarc(
+			"eyJ0aW1lc3RhbXAiOjE1NjU3MzUxMTQ0NjgsInByb2ZpbGVJZCI6IjJmNjY5ZTM5MTAyNTQxMzU5ZTE5ODAyY2E3NWRmYjMyIiwicHJvZmlsZU5hbWUiOiJrYWxsZW1hcmMiLCJzaWduYXR1cmVSZXF1aXJlZCI6dHJ1ZSwidGV4dHVyZXMiOnsiU0tJTiI6eyJ1cmwiOiJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2Y5NDlkNjYxNmVhZjgzNzg1MWMwODkxZjg1OWU5OWZlYWE4ZTg0MzEwZjY2YTBjNDgzYWM0ZmYzZjAxMDFhNGMifX19",
+			"J9u3UTSyvT+uydY4RvyVIU4EVP5Ne3IeiNj2cZWLLISmfZ24NsjsvyKPx9KnZKoLhImrVWcWuugH0bdRS2CvpK+krQar4JrSiXxfAh2nbjsjvS3JV2kPzWniDLT/MF796hsMzmWmDkQcTzUHgTz3Rz421diD7R1Q67jqOZcnka7owV2IjNN6wiFIQri5nkIPeWLRWp6zcU6+QuKM45g5Qsl3ynkX4/Kw+nIdXUvkrHzFhIGCchrCoX7Yy5lg+9H1g/J4gxSJJBa2smA0/VdHdyUJ7qjARzX1eVK9aFoNU1RAMYzVj7UbIaFiO7A04wUp3HlU06utRrfkVTIF1O1e9gnha4aTXSb3CZnSv4jOmbISFS5seZgnJE0lkHIr38wUamniPZtQjDQvxcvS8xFJkqjwEcbjOjCI4oKqtKhPs8sGt6zt/Mn93ltnWylEePJF8mWfSlUUZ7OClIWeN1zajv6LoJXa1XOj+L2E73v0hALA5VDGLiwC8en4N5pGcLnxaGNBZk6pbj6i6iCpTcTZfI2h386617MWxVyXb+9yWjxmOUiOsCOj6SbSvW3G5a0bVhnDJ5uPnxxJodzMsVNjli6IP7f82fokQF82zDGxd/UdWIKcITFOADc+7XgzXht6NrqBS0rfZdFdsW7+6fT7n4hlwbjJjPTGGqCt0c/njT4="),
+	Miner("eyJ0aW1lc3RhbXAiOjE1NjU3MzUxMTU4MDYsInByb2ZpbGVJZCI6IjRlOTRmNDVjNzU5YzQyOTNhZjE2ZmRmMjE5MjM3YTVkIiwicHJvZmlsZU5hbWUiOiJNaW5lciIsInNpZ25hdHVyZVJlcXVpcmVkIjp0cnVlLCJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDQ4ODcwY2E3N2FhNjk5ZDAxNzA5M2I4Mjc3OWQwYTU5OGRjNGYzZjQ5ZDM1MTUzMmFlNGQ5NjMzZGNjMmE1YSJ9fX0=",
+			"E83KryG3wMRJrYFfS3ScBd+5AGVoWVKFiTOP6nezbGsmhDDFtYOIPAbHhtDJMsYmyZzUgFyrz1E79XVmVRK1tn2spHdYSqMiJ70XrNTXvbIsUc3kSP1yX2HrSD0awZ8F0rKo1gUM8056WEITGh+FQeE6Aoj4sTC05M9k7k37f1sBE3gaaswre+uzyn7b2cG8DlFPVkhyy8g6vJ44uCIBowEK8+v0XlaV9JT4gOknqMKzwXQS9A0bha5RSiaX1wgE/OEkOGheoOuHApNXk/gIsqIBV9a4teG7aAOYFpBaEN/8NMrTKxUAechO7eleS6VCnwIRcuxDLY4dGmn4ykeWJb/ePppu/mXPOPaesHC4YuuPoPnwh5XjRsqqwzTwhqX9l+hm1Lyv+bblYi9lfGy68tdr79ejHi9SNDDXe4TJ1JskXXDUODKABODKuj9Pcz3Xeg/f3cVckYJcdKZPISwnjjKLQIqFFC79q9/I5Fp37BceM/n/eYU/cswmrymmXdi2OSZ/jbOedo6k+pUb1JdReiP/7ZsuYWI0gIXqffCtlkKix0T0J8221nmcU4vpkZ5gedoxfctsBVCkTPQpjO3r5EBj71uUyhGxsbfgUEF7YNTUn6kCptjg6X87/yqIBJ2yOdugw/UrFIL4D+8PXOlRagioS/TFNncU/DcN1aFhPhw="),
+	Villager(
+			"eyJ0aW1lc3RhbXAiOjE1NjU3MzUxMTY0NjcsInByb2ZpbGVJZCI6ImEwNWRlZWMwN2EwZTQwNzY4N2NiZGM1ZGNhY2E4NTg2IiwicHJvZmlsZU5hbWUiOiJWaWxsYWdlciIsInNpZ25hdHVyZVJlcXVpcmVkIjp0cnVlLCJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvN2FmN2MwN2QxZGVkNjFiMWQzMzEyNjg1YjMyZTQ1NjhmZmRkYTc2MmVjOGQ4MDg4OTVjYzMyOWE5M2Q2MDZlMCJ9fX0=",
+			"DoXGqECi5Qn/JOZ7nVht66J0OrOOPnnkRhIEhgoMc7yJadq+INzHLyeLMDW+XlWG2rF613uWTIo7btikvofoaDi0G1Owt492nHMDe1SVvc0mdQDw7Yr9WpxpptCP8zSlVBk8qLmTs2Q4yiTJU5LDMxqXAK4znt9aLRSfBHz65x+/L2hjh2wKw0rvhXLgo5vbLCbqFHeS/Tyq8ivZ5y33SxpVlHPc/zy1TMO6+EknZGVohoKHZaUjF3ky+17LYojyJqa5fPeGHYy3afHQYPHjBoKmAXOgjqm9sRbIQYM19bMK+xxoICrtyWaMojN0eNOgxx5/YlJEN3/Dm+cTWkPCekCr1pnfspajeHB5hKdgZVaxJWoRxNxjSTlXuIQ7z4V6ibfq5H8rBFWNOsY4fh2cNATNikXwmhqqw6L1yvm8Yb7lN8y7y8DvdZqwPAxfx8NN9kjrd8mpUK0+qjlCKq9RBLHo8C30YeZcsOf2p7i9pH23SxbInfDe261GGZdXJKAo7G7nCWI5lyVX1q5GKGJDWJnf00VIq/gMEXdpu++V+eS6zmWnk1iQnv4AIHbYr5qQDJ0B49WLEqv6rQvtkFVvFWqQQeY3SBMGsGMCRQ0PPGJLXtkPxuPM8uygCfhm1IO/7yT3d9yOTJAtTC1zVgTFMIxKU92LUfP7+2BTNvUYpy4="),
+	Zombie("ewogICJ0aW1lc3RhbXAiIDogMTU5OTY1NjkzNDE5NCwKICAicHJvZmlsZUlkIiA6ICIwMmIwZTg2ZGM4NmE0YWU3YmM0MTAxNWQyMWY4MGMxYyIsCiAgInByb2ZpbGVOYW1lIiA6ICJab21iaWUiLAogICJzaWduYXR1cmVSZXF1aXJlZCIgOiB0cnVlLAogICJ0ZXh0dXJlcyIgOiB7CiAgICAiU0tJTiIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzgzYWFhZWUyMjg2OGNhZmRhYTFmNmY0YTBlNTZiMGZkYjY0Y2QwYWVhYWJkNmU4MzgxOGMzMTJlYmU2NjQzNyIKICAgIH0KICB9Cn0=",
+			"Xdc4ot0Bo6kN0HoI4PgQRra8iy3TKoQC34fZb+YEdOqzJGs88ueBWPGlNrKl7w8OE/K7te3Oc6/nAgMjtJD/BrX43F8zJJZGVmBqjhGZfx2XCWDMzvZnkBJQIFYTyXdzW1kv3LI9qnS0IXr+v9UIEFTelQyX0+W2nJPrdo0z+kLxUQaw930QSgsVmLqV4RevPRzWWCI9w7bsbA1Kg2s4ISACtRdpl4oVnz2z/x72lyEfrPeiQQfcMP76T7cAPTmdW7B5pSTTfnqWBEeL/fL2EtVBjPGmOsxS+CsEWaNHvc2gxKRTID5PJiSLKvh9uT9uxGkxi32Pu7GxGUu5sqk4sKTsOlkhzrPzCXfGL0Nri09ogCHaZoX4pocSVBiD+FQ2ScniVDvpbdUkeAdpeVVlSl956X9na3GF0TA5lVt0dvoFcX2R6pddHoicDUb1lIxFDfMlmLm7CMmuoMUZ/6wr35qGz6iPTtEeOZKewEtpkEXHkaMga8cvpIKKno18ZM2epC4BO3bIoIYXhFi1sg5QWMFkVmHnoXbJeu0I71st6F20XrpKcfGxzp43m6+CdLET1rpRb3YKKQlpG54DHgYvBJEvBRTRUgLtTpiZCYm9rzOEJJwJSi0rVOitOO/OLdJ/wVWrD7XNJge5gQyOobbCSeoS1Q7bPOI5X//SNjG8Lnk=");
+
+	String value, signature, textureUrl;
+
+	Skins(String value, String signature) {
+		this.value = value;
+		this.signature = signature;
+
+		if (value.length() > 0)
+			this.textureUrl = TextureUtil.getTextureUrl(value);
+	}
+
+	public String[] getSkin(Player player) {
+		if (this == Du) {
+			Property skin = TextureUtil.getSkinFromPlayer(player);
+			if (skin == null) {
+				return new String[] { "", "" };
+			}
+			return new String[] { skin.getValue(), skin.getSignature() };
+		}
+		return new String[] { this.value, this.signature };
+	}
+
+	public String getTextureURL() {
+		if (this.equals(Custom)) {
+			return ItemFactory.QUESTION_MARK_HEAD_URL;
+		}
+		return this.textureUrl;
+	}
+
+	/* You better call this async */
+	public void loadCustom(String playername) {
+		try {
+			UuidProvider provider = UuidUtil.getDefaultProvider();
+			UUID uuid = provider.getUuidOrNull(playername);
+			TextureProperty skin = provider.getTexture(uuid);
+			this.value = skin.getValue();
+			this.signature = skin.getSignature();
+		} catch (Exception ex) {
+		}
+	}
+}
