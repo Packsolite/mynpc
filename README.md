@@ -2,7 +2,7 @@
 MyNPC allows players to create their own NPCs on their plot with ease.
 The plugin was previously developed for a citybuild server called "VaroxCraft.de". As the server was shut down early this year, i am releasing some stuff i made for free.
 
-As it was originally designed for a german server all messages are in german. However, they can be changed in `de.liquiddev.mynpc.Texts.java`
+As it was originally designed for a german server all messages are in german. However, they can be changed in `de.packsolite.mynpc.Texts.java`
 
 ## Permissions
 - `mynpc.use` (if enabled in config)
